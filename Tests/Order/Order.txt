@@ -1,0 +1,33 @@
+*** Settings ***
+Library    Selenium2Library
+Resource    ../../Keywords/BrowserKeywords.txt
+Resource    ../../Keywords/BudikyKeywords.txt
+Resource    ../../Settings/BudikySettings.txt
+Resource    ../../Objects/BudikyObjects.txt
+Test setup    Open Browser And Maximize Window    ${browser}    ${url}
+Test Teardown    Capture Screenshot And Close Browser
+
+*** Test Cases ***
+Buy As Company Inputs Visible
+    Go To Checkout
+    Page Should Contain Checkbox    ${buyAsCompanyCheckbox}    
+    Select Checkbox    ${buyAsCompanyCheckbox}
+    Wait Until Page Contains Element    ${billingCompanyInput}
+    Page Should Contain Element    ${billingIcInput}    
+    Page Should Contain Element    ${billingDicInput} 
+    
+Cant Submit With Required Fields Left Blank
+    Go To Checkout
+    Page Should Contain Checkbox    ${buyAsCompanyCheckbox}    
+    Select Checkbox    ${buyAsCompanyCheckbox}
+    Wait Until Page Contains Element    ${billingCompanyInput}
+    Click Element    ${submitNextButton}
+    Page Should Contain Element    ${billingFirstNameInput}
+    Page Should Contain Element    ${billingStreetInput}
+    Page Should Contain Element    ${billingCityInput}
+    Page Should Contain Element    ${billingZipInput}
+    Page Should Contain Element    ${billingCountrySelect}
+    Page Should Contain Element    ${emailInput}
+    Page Should Contain Element    ${phoneInput}
+    Page Should Contain Element    ${billingIcInput}    
+    Page Should Contain Element    ${billingDicInput} 

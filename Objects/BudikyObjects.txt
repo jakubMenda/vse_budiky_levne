@@ -1,0 +1,68 @@
+*** Variables ***
+#Overall
+${cartIconClassName}    class=cart-text
+${footerClassName}    class=footer-content
+${aboutUsLink}    xpath=//a[@href="/o-nas/"]
+${contactLink}    xpath=//a[@href="/kontakt/"]
+${termsLink}    xpath=//a[@href="/obchodni-podminky/"]
+${clickableLogo}    class=logo-text
+${privacyPolicyLink}    xpath=//a[@href="/pravidla-ochrany-soukromi/"]
+${oneProductCartIcon}    xpath=//div[@class="cart-piece-count"][@data-count="1"]
+${twoProductsCartIcon}    xpath=//div[@class="cart-piece-count"][@data-count="2"]
+
+#Homepage
+${filterSectionClassName}    class=eshop-filter
+${catalogueClassName}    class=eshop-container
+${catalogueItemClassName}    class=item
+${privacyPolicyText}    Pravidla ochrany soukromí
+${termsText}    Obchodní podmínky
+${aboutUsText}    O nás
+${contactText}    Kontaktujte nás
+
+#Cart
+${cartContainerClassName}    class=eshop-cart
+${shoppingCartItemClassName}    class=eshop-cart-item
+${quantityInputOnePiece}    xpath=//input[@data-wnd_cart_part="item-quantity"][@value="1"]
+${quantityInputTwoPieces}    xpath=//input[@data-wnd_cart_part="item-quantity"][@value="2"]
+${quantityAddButtonClassName}    class=eshop-cart-quantity-add
+${quantityRemoveButtonClassName}    class=eshop-cart-quantity-remove
+${deleteProductButton}    xpath=//div[@data-wnd_cart_part="item-delete"]
+${noProductsMsg}    Váš košík zeje prázdnotou.
+${continueShoppingLink}    xpath=//div[@class="eshop-cart-continue cf"]/a
+${checkoutLink}    xpath=//a[@href="/checkout/"]
+
+#AboutUs
+${aboutUsHeading}    Budíky levně - je to testovací web, prosím, HLAVNĚ SI OD NÁS NIC NEKUPUJTE!
+
+#Contact
+${contactHeading}    Nechoďte navštívit naší prodejnu - neexistuje
+
+#Terms
+${termsHeading}    Obchodní podmínky
+
+#PrivacyPolicy
+${privacyPolicyHeading}    Pravidla ochrany soukromí
+
+#NotFound
+${notFoundHeading}    404 - Stránka nebyla nalezena
+
+#Product Detail
+${productDetailHeadingClassName}    class=product-title-content
+${productDetailGalleryClassName}    class=eshop-detail-gallery
+${productDetailDescClassName}    class=eshop-detail-content
+${productDetailSubmitButtonClassName}    class=product-cart-submit
+
+#Checkout
+${checkoutContainerClassName}    class=checkout-main-inner
+${buyAsCompanyCheckbox}    xpath=//input[@name="company"]
+${billingCompanyInput}    xpath=//input[@name="billing_company"][@required]
+${billingIcInput}    xpath=//input[@name="billing_company"][@required]
+${billingDicInput}    xpath=//input[@name="billing_dic"]
+${submitNextButton}    class=checkout-submit-next
+${billingFirstNameInput}    xpath=//input[@name="billing_first_name"][@required]
+${billingStreetInput}    xpath=//input[@name="billing_street"][@required]
+${billingCityInput}    xpath=//input[@name="billing_city"][@required]
+${billingZipInput}    xpath=//input[@name="billing_zip"][@required]
+${billingCountrySelect}    xpath=//select[@name="billing_country"][@required]
+${emailInput}    xpath=//input[@name="email"][@required]
+${phoneInput}    xpath=//input[@name="phone"][@required]

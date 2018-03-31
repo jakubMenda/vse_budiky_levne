@@ -1,0 +1,50 @@
+*** Settings ***
+Library    Selenium2Library
+Resource    ../../Keywords/BrowserKeywords.txt
+Resource    ../../Keywords/BudikyKeywords.txt
+Resource    ../../Settings/BudikySettings.txt
+Resource    ../../Objects/BudikyObjects.txt
+Test setup    Open Browser And Maximize Window    ${browser}    ${url}
+Test Teardown    Capture Screenshot And Close Browser
+
+*** Test Cases ***
+Add the Product To the Shopping Cart
+    Add the Product To the Shopping Cart
+    Wait Until Page Contains Element    ${oneProductCartIcon} 
+    Go To the Shopping Cart
+    Wait Until Page Contains Element    ${shoppingCartItemClassName}
+        
+Change Quantity Of a Product
+    Add the Product To the Shopping Cart
+    Wait Until Page Contains Element    ${oneProductCartIcon} 
+    Go To the Shopping Cart
+    Wait Until Page Contains Element    ${shoppingCartItemClassName}
+    Page Should Contain Element    ${quantityInputOnePiece}
+    Click Element    ${quantityAddButtonClassName}
+    Reload Page
+    Wait Until Page Contains Element    ${quantityInputTwoPieces}
+    Wait Until Page Contains Element    ${twoProductsCartIcon} 
+    Click Element    ${quantityRemoveButtonClassName}
+    Reload Page
+    Wait Until Page Contains Element    ${quantityInputOnePiece}    
+    Wait Until Page Contains Element    ${oneProductCartIcon}            
+    
+Remove Product From Shopping Cart
+    Add the Product To the Shopping Cart
+    Wait Until Page Contains Element    ${oneProductCartIcon} 
+    Go To the Shopping Cart
+    Wait Until Page Contains Element    ${shoppingCartItemClassName}
+    Click Element    ${deleteProductButton}
+    Page Should Contain    ${noProductsMsg}   
+    
+Go From Shopping Cart Back To Catalogue
+    Add the Product To the Shopping Cart
+    Wait Until Page Contains Element    ${oneProductCartIcon} 
+    Go To the Shopping Cart
+    Wait Until Page Contains Element    ${shoppingCartItemClassName}
+    Click Element    ${continueShoppingLink}
+    Wait Until Page Contains Element    ${productDetailHeadingClassName} 
+    
+Go From Shopping Cart To Checkout
+    Go To Checkout
+       

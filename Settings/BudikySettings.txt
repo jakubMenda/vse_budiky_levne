@@ -1,0 +1,10 @@
+*** Variables ***
+${url}    https://budiky-levne.webnode.cz/
+${browser}    chrome
+
+#Routes
+${aboutUsUrl}    https://budiky-levne.webnode.cz/o-nas/
+${contactUrl}    https://budiky-levne.webnode.cz/kontakt/
+${termsUrl}    https://budiky-levne.webnode.cz/obchodni-podminky/
+${privacyPolicyUrl}    https://budiky-levne.webnode.cz/pravidla-ochrany-soukromi/
+${nonExistentUrl}    https://budiky-levne.webnode.cz/opravdu-levne/

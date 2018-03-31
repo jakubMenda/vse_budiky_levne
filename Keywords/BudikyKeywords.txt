@@ -1,0 +1,35 @@
+*** Settings ***
+Library    Selenium2Library    
+Resource    ../Objects/BudikyObjects.txt
+
+*** Keywords ***
+Go To the Shopping Cart
+    Page Should Contain Element    ${cartIconClassName}    
+    Click Element    ${cartIconClassName}
+    Wait Until Page Contains Element    ${cartContainerClassName}   
+    
+Navigate Via Link
+    [Arguments]    ${LinkElement}    ${expectedUrl}
+    Wait Until Page Contains Element    ${linkElement}
+    Click Element    ${linkElement}    
+    Location Should Be    ${expectedUrl}
+    
+Go To Product Detail
+    Wait Until Page Contains Element    ${catalogueItemClassName}
+    Click Element    ${catalogueItemClassName}    
+    Wait Until Page Contains Element    ${productDetailHeadingClassName}
+	Page Should Contain Element    ${productDetailGalleryClassName}    
+	Page Should Contain Element    ${productDetailDescClassName}   
+	Page Should Contain Element    ${productDetailSubmitButtonClassName}   
+	
+Add the Product To the Shopping Cart
+    Go To Product Detail
+    Click Element    ${productDetailSubmitButtonClassName}   
+    
+Go To Checkout
+    Add the Product To the Shopping Cart
+    Wait Until Page Contains Element    ${oneProductCartIcon} 
+    Go To the Shopping Cart
+    Wait Until Page Contains Element    ${shoppingCartItemClassName}
+    Click Element    ${checkoutLink}
+    Wait Until Page Contains Element    ${checkoutContainerClassName} 

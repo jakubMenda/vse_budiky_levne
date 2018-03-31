@@ -1,0 +1,12 @@
+*** Settings ***
+Library    Selenium2Library    
+
+*** Keywords ***
+Capture Screenshot And Close Browser
+    Capture Page Screenshot
+    Close Browser
+    
+Open Browser And Maximize Window
+    [Arguments]    ${browser}    ${url}
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window   
