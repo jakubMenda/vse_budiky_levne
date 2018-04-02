@@ -9,6 +9,7 @@ ${clickableLogo}    class=logo-text
 ${privacyPolicyLink}    xpath=//a[@href="/pravidla-ochrany-soukromi/"]
 ${oneProductCartIcon}    xpath=//div[@class="cart-piece-count"][@data-count="1"]
 ${twoProductsCartIcon}    xpath=//div[@class="cart-piece-count"][@data-count="2"]
+${enterKeyCode}    \\13
 
 #Homepage
 ${filterSectionClassName}    class=eshop-filter
@@ -66,3 +67,29 @@ ${billingZipInput}    xpath=//input[@name="billing_zip"][@required]
 ${billingCountrySelect}    xpath=//select[@name="billing_country"][@required]
 ${emailInput}    xpath=//input[@name="email"][@required]
 ${phoneInput}    xpath=//input[@name="phone"][@required]
+
+${checkoutShippingContainer}    class=checkout-shipping
+${shippingMethodRadioGroup}    shipping_method
+${czechPostalOfficeRadioValue}    200000000
+${dhlRadioValue}    200000001
+${personalCollectionRadioValue}    200000002
+${shopAddressClassName}    class=ch-form-method-info-store
+${shippingPriceLabel}    Cena dopravy
+${anotherAddressLink}    xpath=//div[@class="ch-form-method-info cf"]/a
+${submitShipping}    xpath=//div[@class="checkout-form checkout-shipping cf wnd-show"]/form/div[@class="checkout-submit cf"]/button[@class="checkout-submit-next wnd-button-submit"]
+${personalCollectionLabel}    Osobní odběr
+
+${checkoutPaymentContainer}    class=checkout-payment
+${paymentMethodRadioGroup}    payment_method
+${cashOnDeliveryRadioValue}    200000000
+${bankTransferRadioValue}    200000002
+${cashOnDeliveryLabel}    Na dobírku
+${bankTransferLabel}    Bankovní převod
+${submitPayment}    xpath=//div[@class="checkout-form checkout-payment cf wnd-show"]/form/div[@class="checkout-submit cf"]/button[@class="checkout-submit-next wnd-button-submit"]
+
+${checkoutConfirmContainer}    class=checkout-confirm
+${submitConfirm}    xpath=//div[@class="checkout-form checkout-confirm cf wnd-show"]/form/div[@class="checkout-submit cf"]/button[@class="checkout-submit-next wnd-button-submit"]
+${termsCheckbox}    xpath=//input[@id="ch-agree"][@required="required"]
+${addressEditLink}    xpath=//a[@class="checkout-address-edit wnd-billing-address"]
+${shippingEditLink}    xpath=//a[@class="checkout-address-edit wnd-shipping-address"]
+${paymentMethodEditLink}    xpath=//a[@class="checkout-address-edit wnd-payment-address"]

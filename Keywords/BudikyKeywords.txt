@@ -1,6 +1,7 @@
 *** Settings ***
 Library    Selenium2Library    
 Resource    ../Objects/BudikyObjects.txt
+Resource    ../Settings/BudikySettings.txt
 
 *** Keywords ***
 Go To the Shopping Cart
@@ -32,4 +33,36 @@ Go To Checkout
     Go To the Shopping Cart
     Wait Until Page Contains Element    ${shoppingCartItemClassName}
     Click Element    ${checkoutLink}
-    Wait Until Page Contains Element    ${checkoutContainerClassName} 
+    Wait Until Page Contains Element    ${checkoutContainerClassName}
+    
+Go To Checkout And Submit the Address
+    Go To Checkout
+    Input Text    ${billingFirstNameInput}    ${customerName}
+    Input Text    ${billingStreetInput}    ${customerStreet}
+    Input Text    ${billingCityInput}    ${customerCity}
+    Input Text    ${billingZipInput}    ${customerZipCode}
+    Click Element    ${billingCountrySelect}
+    Select From List By Label    ${billingCountrySelect}    ${customerCountry}
+    Input Text    ${emailInput}    ${customerEmail}
+    Input Text    ${phoneInput}    ${customerPhone}
+    Click Button    ${submitNextButton}
+    Wait Until Page Contains Element    ${checkoutShippingContainer}     
+    
+Go To the Payment Options
+    Go To Checkout And Submit the Address
+    Select Radio Button    ${shippingMethodRadioGroup}    ${personalCollectionRadioValue}
+    Wait Until Page Contains Element    ${shopAddressClassName}
+    Wait Until Element Is Visible    ${submitShipping}  
+    Click Element    ${submitShipping}
+    Wait Until Page Contains Element    ${checkoutPaymentContainer}
+    
+Select Payment Method
+    [Arguments]    ${radioValue}    ${textExpected}
+    Go To The Payment Options
+    Sleep    2
+    Select Radio Button    ${paymentMethodRadioGroup}    ${radioValue}
+    Wait Until Element Is Visible    ${submitPayment}
+    Click Element    ${submitPayment}
+    Wait Until Page Contains Element    ${checkoutConfirmContainer}
+    Wait Until Page Contains    ${textExpected}
+    

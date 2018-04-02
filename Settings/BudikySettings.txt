@@ -8,3 +8,13 @@ ${contactUrl}    https://budiky-levne.webnode.cz/kontakt/
 ${termsUrl}    https://budiky-levne.webnode.cz/obchodni-podminky/
 ${privacyPolicyUrl}    https://budiky-levne.webnode.cz/pravidla-ochrany-soukromi/
 ${nonExistentUrl}    https://budiky-levne.webnode.cz/opravdu-levne/
+${orderCompleteUrl}    https://budiky-levne.webnode.cz/order-complete/
+
+#Credentials
+${customerName}    František Dobrota
+${customerStreet}    Uličnická 123
+${customerCity}    Praha
+${customerZipCode}    18600
+${customerCountry}    Česko
+${customerEmail}    frantisek.dobrota1237894565@neexistujici.cz
+${customerPhone}    +420123456789

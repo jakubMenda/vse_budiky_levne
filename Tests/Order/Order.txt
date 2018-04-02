@@ -30,4 +30,63 @@ Cant Submit With Required Fields Left Blank
     Page Should Contain Element    ${emailInput}
     Page Should Contain Element    ${phoneInput}
     Page Should Contain Element    ${billingIcInput}    
-    Page Should Contain Element    ${billingDicInput} 
+    Page Should Contain Element    ${billingDicInput}
+    
+Select Personal Order Collection
+    Go To Checkout And Submit The Address
+    Select Radio Button    ${shippingMethodRadioGroup}    ${personalCollectionRadioValue}
+    Wait Until Page Contains Element    ${shopAddressClassName}    
+    
+Select Czech Postal Office
+    Go To Checkout And Submit The Address
+    Select Radio Button    ${shippingMethodRadioGroup}    ${czechPostalOfficeRadioValue}
+    Wait Until Page Contains    ${shippingPriceLabel}
+    Wait Until Page Contains Element    ${anotherAddressLink}
+    
+Go For Cash On Delivery
+    Select Payment Method    ${cashOnDeliveryRadioValue}    ${cashOnDeliveryLabel}
+    
+Go For Bank Transfer
+    Select Payment Method    ${bankTransferRadioValue}    ${bankTransferLabel}
+    
+Try To Submit Without Accepting the Terms
+    Select Payment Method    ${cashOnDeliveryRadioValue}    ${cashOnDeliveryLabel}
+    Click Element    ${submitConfirm}
+    Wait Until Element Is Visible    ${checkoutConfirmContainer}
+    Page Should Contain Element    ${termsCheckbox}
+    
+Change Address Before Submitting
+    Select Payment Method    ${cashOnDeliveryRadioValue}    ${cashOnDeliveryLabel}
+    Wait Until Element Is Visible    ${addressEditLink}
+    Click Element    ${addressEditLink}
+    Wait Until Element Is Visible    ${billingFirstNameInput}   
+    Page Should Contain Element    ${billingStreetInput}
+    Page Should Contain Element    ${billingCityInput}
+    Page Should Contain Element    ${billingZipInput}
+    Page Should Contain Element    ${billingCountrySelect}
+    Page Should Contain Element    ${emailInput}
+    Page Should Contain Element    ${phoneInput}    
+    
+Change Shipping Method Before Submitting
+    Select Payment Method    ${cashOnDeliveryRadioValue}    ${cashOnDeliveryLabel}
+    Wait Until Element Is Visible    ${shippingEditLink}
+    Click Element    ${shippingEditLink}
+    Wait Until Element Is Visible    ${checkoutShippingContainer}   
+    
+Change Payment Method Before Submitting
+    Select Payment Method    ${cashOnDeliveryRadioValue}    ${cashOnDeliveryLabel}
+    Wait Until Element Is Visible    ${paymentMethodEditLink}
+    Click Element    ${paymentMethodEditLink}
+    Wait Until Element Is Visible    ${checkoutPaymentContainer}  
+    
+Submit the Order
+    Select Payment Method    ${cashOnDeliveryRadioValue}    ${cashOnDeliveryLabel}
+    Wait Until Page Contains    ${customerEmail}  
+    Page Should Contain    ${personalCollectionLabel}
+    Page Should Contain    ${bankTransferLabel}
+    Sleep    2
+    Select Checkbox    ${termsCheckbox}
+    Click Element    ${submitConfirm}
+    Wait Until Page Does Not Contain    ${customerEmail}  
+    Location Should Be    ${orderCompleteUrl}
+    
