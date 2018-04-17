@@ -5,9 +5,11 @@ Resource    ../Settings/BudikySettings.txt
 
 *** Keywords ***
 Go To the Shopping Cart
+    Wait Until Page Contains Element    ${oneProductCartIcon} 
     Page Should Contain Element    ${cartIconClassName}    
     Click Element    ${cartIconClassName}
-    Wait Until Page Contains Element    ${cartContainerClassName}   
+    Wait Until Page Contains Element    ${cartContainerClassName} 
+    Wait Until Page Contains Element    ${shoppingCartItemClassName}  
     
 Navigate Via Link
     [Arguments]    ${LinkElement}    ${expectedUrl}
@@ -26,17 +28,29 @@ Go To Product Detail
 Add the Product To the Shopping Cart
     Go To Product Detail
     Click Element    ${productDetailSubmitButtonClassName}   
+
+Add Product And Go To Cart
+    Add the Product To the Shopping Cart 
+    Go To the Shopping Cart
+
+Click On Change Quantity Icon
+    [Arguments]    ${button}    ${input}    ${icon}
+    Click Element    ${button}
+    Reload Page
+    Wait Until Page Contains Element    ${input}
+    Wait Until Page Contains Element    ${icon} 
     
 Go To Checkout
-    Add the Product To the Shopping Cart
-    Wait Until Page Contains Element    ${oneProductCartIcon} 
-    Go To the Shopping Cart
-    Wait Until Page Contains Element    ${shoppingCartItemClassName}
+    Add Product And Go To Cart
     Click Element    ${checkoutLink}
     Wait Until Page Contains Element    ${checkoutContainerClassName}
+
+Select Company Shopping
+    Page Should Contain Checkbox    ${buyAsCompanyCheckbox}    
+    Select Checkbox    ${buyAsCompanyCheckbox}
+    Wait Until Page Contains Element    ${billingCompanyInput}
     
-Go To Checkout And Submit the Address
-    Go To Checkout
+Submit the Address
     Input Text    ${billingFirstNameInput}    ${customerName}
     Input Text    ${billingStreetInput}    ${customerStreet}
     Input Text    ${billingCityInput}    ${customerCity}
@@ -49,7 +63,7 @@ Go To Checkout And Submit the Address
     Wait Until Page Contains Element    ${checkoutShippingContainer}     
     
 Go To the Payment Options
-    Go To Checkout And Submit the Address
+    Submit the Address
     Select Radio Button    ${shippingMethodRadioGroup}    ${personalCollectionRadioValue}
     Wait Until Page Contains Element    ${shopAddressClassName}
     Wait Until Element Is Visible    ${submitShipping}  

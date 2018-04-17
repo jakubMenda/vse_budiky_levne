@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180331 17:44:30.276" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
-<suite source="H:\budiky\budiky" id="s1" name="Budiky">
-<suite source="H:\budiky\budiky\Tests" id="s1-s1" name="Tests">
-<suite source="H:\budiky\budiky\Tests\Order" id="s1-s1-s1" name="Order">
-<suite source="H:\budiky\budiky\Tests\Order\Order.txt" id="s1-s1-s1-s1" name="Order">
-<test id="s1-s1-s1-s1-t1" name="Buy As Company Inputs Visible">
-<kw type="setup" name="Open Browser And Maximize Window" library="BrowserKeywords">
+<robot generated="20180415 18:19:51.547" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="H:\workspace\budiky" id="s1" name="Budiky">
+<suite source="H:\workspace\budiky\Tests" id="s1-s1" name="Tests">
+<suite source="H:\workspace\budiky\Tests\Order" id="s1-s1-s1" name="Order">
+<suite source="H:\workspace\budiky\Tests\Order\Order.robot" id="s1-s1-s1-s1" name="Order">
+<test id="s1-s1-s1-s1-t1" name="Submit the Order">
+<kw type="setup" name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>Open Browser And Maximize Window</arg>
+<arg>${browser}</arg>
+<arg>${url}</arg>
+</arguments>
+<kw name="Open Browser And Maximize Window" library="BrowserKeywords">
 <arguments>
 <arg>${browser}</arg>
 <arg>${url}</arg>
@@ -16,16 +23,19 @@
 <arg>${url}</arg>
 <arg>${browser}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:30.554" level="INFO">Opening browser 'chrome' to base url 'https://budiky-levne.webnode.cz/'.</msg>
-<status status="PASS" endtime="20180331 17:44:35.940" starttime="20180331 17:44:30.553"></status>
+<msg timestamp="20180415 18:19:51.844" level="INFO">Opening browser 'chrome' to base url 'https://budiky-levne.webnode.cz/'.</msg>
+<status status="PASS" endtime="20180415 18:19:57.270" starttime="20180415 18:19:51.844"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180331 17:44:37.376" starttime="20180331 17:44:35.941"></status>
+<status status="PASS" endtime="20180415 18:19:58.701" starttime="20180415 18:19:57.271"></status>
 </kw>
-<status status="PASS" endtime="20180331 17:44:37.376" starttime="20180331 17:44:30.552"></status>
+<status status="PASS" endtime="20180415 18:19:58.701" starttime="20180415 18:19:51.844"></status>
 </kw>
-<kw name="Go To Checkout" library="BudikyKeywords">
+<status status="PASS" endtime="20180415 18:19:58.702" starttime="20180415 18:19:51.844"></status>
+</kw>
+<kw name="And Go To Checkout" library="BudikyKeywords">
+<kw name="Add Product And Go To Cart" library="BudikyKeywords">
 <kw name="Add the Product To the Shopping Cart" library="BudikyKeywords">
 <kw name="Go To Product Detail" library="BudikyKeywords">
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
@@ -33,447 +43,449 @@
 <arguments>
 <arg>${catalogueItemClassName}</arg>
 </arguments>
-<status status="PASS" endtime="20180331 17:44:37.397" starttime="20180331 17:44:37.379"></status>
+<status status="PASS" endtime="20180415 18:19:58.737" starttime="20180415 18:19:58.705"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${catalogueItemClassName}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:37.398" level="INFO">Clicking element 'class=item'.</msg>
-<status status="PASS" endtime="20180331 17:44:37.816" starttime="20180331 17:44:37.397"></status>
+<msg timestamp="20180415 18:19:58.737" level="INFO">Clicking element 'class=item'.</msg>
+<status status="PASS" endtime="20180415 18:19:59.095" starttime="20180415 18:19:58.737"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>${productDetailHeadingClassName}</arg>
 </arguments>
-<status status="PASS" endtime="20180331 17:44:37.848" starttime="20180331 17:44:37.816"></status>
+<status status="PASS" endtime="20180415 18:19:59.124" starttime="20180415 18:19:59.096"></status>
 </kw>
 <kw name="Page Should Contain Element" library="Selenium2Library">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
 <arg>${productDetailGalleryClassName}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:37.866" level="INFO">Current page contains element 'class=eshop-detail-gallery'.</msg>
-<status status="PASS" endtime="20180331 17:44:37.867" starttime="20180331 17:44:37.849"></status>
+<msg timestamp="20180415 18:19:59.141" level="INFO">Current page contains element 'class=eshop-detail-gallery'.</msg>
+<status status="PASS" endtime="20180415 18:19:59.141" starttime="20180415 18:19:59.125"></status>
 </kw>
 <kw name="Page Should Contain Element" library="Selenium2Library">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
 <arg>${productDetailDescClassName}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:37.883" level="INFO">Current page contains element 'class=eshop-detail-content'.</msg>
-<status status="PASS" endtime="20180331 17:44:37.884" starttime="20180331 17:44:37.867"></status>
+<msg timestamp="20180415 18:19:59.158" level="INFO">Current page contains element 'class=eshop-detail-content'.</msg>
+<status status="PASS" endtime="20180415 18:19:59.158" starttime="20180415 18:19:59.142"></status>
 </kw>
 <kw name="Page Should Contain Element" library="Selenium2Library">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
 <arg>${productDetailSubmitButtonClassName}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:37.900" level="INFO">Current page contains element 'class=product-cart-submit'.</msg>
-<status status="PASS" endtime="20180331 17:44:37.901" starttime="20180331 17:44:37.884"></status>
+<msg timestamp="20180415 18:19:59.175" level="INFO">Current page contains element 'class=product-cart-submit'.</msg>
+<status status="PASS" endtime="20180415 18:19:59.175" starttime="20180415 18:19:59.159"></status>
 </kw>
-<status status="PASS" endtime="20180331 17:44:37.901" starttime="20180331 17:44:37.378"></status>
+<status status="PASS" endtime="20180415 18:19:59.175" starttime="20180415 18:19:58.704"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${productDetailSubmitButtonClassName}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:37.902" level="INFO">Clicking element 'class=product-cart-submit'.</msg>
-<status status="PASS" endtime="20180331 17:44:37.980" starttime="20180331 17:44:37.901"></status>
+<msg timestamp="20180415 18:19:59.176" level="INFO">Clicking element 'class=product-cart-submit'.</msg>
+<status status="PASS" endtime="20180415 18:19:59.242" starttime="20180415 18:19:59.176"></status>
 </kw>
-<status status="PASS" endtime="20180331 17:44:37.980" starttime="20180331 17:44:37.378"></status>
+<status status="PASS" endtime="20180415 18:19:59.243" starttime="20180415 18:19:58.704"></status>
 </kw>
+<kw name="Go To the Shopping Cart" library="BudikyKeywords">
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>${oneProductCartIcon}</arg>
 </arguments>
-<status status="PASS" endtime="20180331 17:44:38.211" starttime="20180331 17:44:37.981"></status>
+<status status="PASS" endtime="20180415 18:19:59.433" starttime="20180415 18:19:59.244"></status>
 </kw>
-<kw name="Go To the Shopping Cart" library="BudikyKeywords">
 <kw name="Page Should Contain Element" library="Selenium2Library">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
 <arg>${cartIconClassName}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:38.228" level="INFO">Current page contains element 'class=cart-text'.</msg>
-<status status="PASS" endtime="20180331 17:44:38.229" starttime="20180331 17:44:38.212"></status>
+<msg timestamp="20180415 18:19:59.455" level="INFO">Current page contains element 'class=cart-text'.</msg>
+<status status="PASS" endtime="20180415 18:19:59.456" starttime="20180415 18:19:59.433"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${cartIconClassName}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:38.230" level="INFO">Clicking element 'class=cart-text'.</msg>
-<status status="PASS" endtime="20180331 17:44:38.860" starttime="20180331 17:44:38.229"></status>
+<msg timestamp="20180415 18:19:59.457" level="INFO">Clicking element 'class=cart-text'.</msg>
+<status status="PASS" endtime="20180415 18:20:00.058" starttime="20180415 18:19:59.456"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>${cartContainerClassName}</arg>
 </arguments>
-<status status="PASS" endtime="20180331 17:44:38.893" starttime="20180331 17:44:38.861"></status>
-</kw>
-<status status="PASS" endtime="20180331 17:44:38.893" starttime="20180331 17:44:38.211"></status>
+<status status="PASS" endtime="20180415 18:20:00.080" starttime="20180415 18:20:00.059"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>${shoppingCartItemClassName}</arg>
 </arguments>
-<status status="PASS" endtime="20180331 17:44:38.916" starttime="20180331 17:44:38.893"></status>
+<status status="PASS" endtime="20180415 18:20:00.098" starttime="20180415 18:20:00.081"></status>
+</kw>
+<status status="PASS" endtime="20180415 18:20:00.099" starttime="20180415 18:19:59.244"></status>
+</kw>
+<status status="PASS" endtime="20180415 18:20:00.099" starttime="20180415 18:19:58.703"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${checkoutLink}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:38.917" level="INFO">Clicking element 'xpath=//a[@href="/checkout/"]'.</msg>
-<status status="PASS" endtime="20180331 17:44:40.041" starttime="20180331 17:44:38.917"></status>
+<msg timestamp="20180415 18:20:00.100" level="INFO">Clicking element 'xpath=//a[@href="/checkout/"]'.</msg>
+<status status="PASS" endtime="20180415 18:20:00.986" starttime="20180415 18:20:00.100"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>${checkoutContainerClassName}</arg>
 </arguments>
-<status status="PASS" endtime="20180331 17:44:40.061" starttime="20180331 17:44:40.042"></status>
+<status status="PASS" endtime="20180415 18:20:01.007" starttime="20180415 18:20:00.987"></status>
 </kw>
-<status status="PASS" endtime="20180331 17:44:40.062" starttime="20180331 17:44:37.377"></status>
+<status status="PASS" endtime="20180415 18:20:01.008" starttime="20180415 18:19:58.702"></status>
 </kw>
-<kw name="Page Should Contain Checkbox" library="Selenium2Library">
-<doc>Verifies checkbox ``locator`` is found from current page.</doc>
+<kw name="Select Payment Method" library="BudikyKeywords">
 <arguments>
-<arg>${buyAsCompanyCheckbox}</arg>
+<arg>${cashOnDeliveryRadioValue}</arg>
+<arg>${cashOnDeliveryLabel}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:40.098" level="INFO">Current page contains checkbox 'xpath=//input[@name="company"]'.</msg>
-<status status="PASS" endtime="20180331 17:44:40.098" starttime="20180331 17:44:40.062"></status>
-</kw>
-<kw name="Select Checkbox" library="Selenium2Library">
-<doc>Selects checkbox identified by ``locator``.</doc>
-<arguments>
-<arg>${buyAsCompanyCheckbox}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:40.099" level="INFO">Selecting checkbox 'xpath=//input[@name="company"]'.</msg>
-<status status="PASS" endtime="20180331 17:44:40.196" starttime="20180331 17:44:40.098"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${billingCompanyInput}</arg>
-</arguments>
-<status status="PASS" endtime="20180331 17:44:40.223" starttime="20180331 17:44:40.197"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${billingIcInput}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:40.233" level="INFO">Current page contains element 'xpath=//input[@name="billing_company"][@required]'.</msg>
-<status status="PASS" endtime="20180331 17:44:40.234" starttime="20180331 17:44:40.223"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${billingDicInput}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:40.258" level="INFO">Current page contains element 'xpath=//input[@name="billing_dic"]'.</msg>
-<status status="PASS" endtime="20180331 17:44:40.259" starttime="20180331 17:44:40.234"></status>
-</kw>
-<kw type="teardown" name="Capture Screenshot And Close Browser" library="BrowserKeywords">
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180331 17:44:40.659" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180331 17:44:40.659" starttime="20180331 17:44:40.261"></status>
-</kw>
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180331 17:44:43.872" starttime="20180331 17:44:40.660"></status>
-</kw>
-<status status="PASS" endtime="20180331 17:44:43.873" starttime="20180331 17:44:40.260"></status>
-</kw>
-<status status="PASS" endtime="20180331 17:44:43.874" critical="yes" starttime="20180331 17:44:30.551"></status>
-</test>
-<test id="s1-s1-s1-s1-t2" name="Cant Submit With Required Fields Left Blank">
-<kw type="setup" name="Open Browser And Maximize Window" library="BrowserKeywords">
-<arguments>
-<arg>${browser}</arg>
-<arg>${url}</arg>
-</arguments>
-<kw name="Open Browser" library="Selenium2Library">
-<doc>Opens a new browser instance to the given ``url``.</doc>
-<arguments>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:43.878" level="INFO">Opening browser 'chrome' to base url 'https://budiky-levne.webnode.cz/'.</msg>
-<status status="PASS" endtime="20180331 17:44:49.199" starttime="20180331 17:44:43.878"></status>
-</kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180331 17:44:50.636" starttime="20180331 17:44:49.200"></status>
-</kw>
-<status status="PASS" endtime="20180331 17:44:50.637" starttime="20180331 17:44:43.876"></status>
-</kw>
-<kw name="Go To Checkout" library="BudikyKeywords">
-<kw name="Add the Product To the Shopping Cart" library="BudikyKeywords">
-<kw name="Go To Product Detail" library="BudikyKeywords">
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${catalogueItemClassName}</arg>
-</arguments>
-<status status="PASS" endtime="20180331 17:44:50.656" starttime="20180331 17:44:50.639"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${catalogueItemClassName}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:50.657" level="INFO">Clicking element 'class=item'.</msg>
-<status status="PASS" endtime="20180331 17:44:51.143" starttime="20180331 17:44:50.656"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${productDetailHeadingClassName}</arg>
-</arguments>
-<status status="PASS" endtime="20180331 17:44:51.164" starttime="20180331 17:44:51.144"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${productDetailGalleryClassName}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:51.182" level="INFO">Current page contains element 'class=eshop-detail-gallery'.</msg>
-<status status="PASS" endtime="20180331 17:44:51.182" starttime="20180331 17:44:51.165"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${productDetailDescClassName}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:51.198" level="INFO">Current page contains element 'class=eshop-detail-content'.</msg>
-<status status="PASS" endtime="20180331 17:44:51.198" starttime="20180331 17:44:51.183"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${productDetailSubmitButtonClassName}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:51.215" level="INFO">Current page contains element 'class=product-cart-submit'.</msg>
-<status status="PASS" endtime="20180331 17:44:51.215" starttime="20180331 17:44:51.199"></status>
-</kw>
-<status status="PASS" endtime="20180331 17:44:51.216" starttime="20180331 17:44:50.639"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${productDetailSubmitButtonClassName}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:51.217" level="INFO">Clicking element 'class=product-cart-submit'.</msg>
-<status status="PASS" endtime="20180331 17:44:51.294" starttime="20180331 17:44:51.216"></status>
-</kw>
-<status status="PASS" endtime="20180331 17:44:51.295" starttime="20180331 17:44:50.638"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${oneProductCartIcon}</arg>
-</arguments>
-<status status="PASS" endtime="20180331 17:44:51.525" starttime="20180331 17:44:51.296"></status>
-</kw>
-<kw name="Go To the Shopping Cart" library="BudikyKeywords">
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${cartIconClassName}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:51.543" level="INFO">Current page contains element 'class=cart-text'.</msg>
-<status status="PASS" endtime="20180331 17:44:51.544" starttime="20180331 17:44:51.525"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${cartIconClassName}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:51.546" level="INFO">Clicking element 'class=cart-text'.</msg>
-<status status="PASS" endtime="20180331 17:44:52.225" starttime="20180331 17:44:51.544"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${cartContainerClassName}</arg>
-</arguments>
-<status status="PASS" endtime="20180331 17:44:52.254" starttime="20180331 17:44:52.226"></status>
-</kw>
-<status status="PASS" endtime="20180331 17:44:52.254" starttime="20180331 17:44:51.525"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${shoppingCartItemClassName}</arg>
-</arguments>
-<status status="PASS" endtime="20180331 17:44:52.272" starttime="20180331 17:44:52.255"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${checkoutLink}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:52.273" level="INFO">Clicking element 'xpath=//a[@href="/checkout/"]'.</msg>
-<status status="PASS" endtime="20180331 17:44:53.584" starttime="20180331 17:44:52.272"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${checkoutContainerClassName}</arg>
-</arguments>
-<status status="PASS" endtime="20180331 17:44:53.610" starttime="20180331 17:44:53.587"></status>
-</kw>
-<status status="PASS" endtime="20180331 17:44:53.611" starttime="20180331 17:44:50.637"></status>
-</kw>
-<kw name="Page Should Contain Checkbox" library="Selenium2Library">
-<doc>Verifies checkbox ``locator`` is found from current page.</doc>
-<arguments>
-<arg>${buyAsCompanyCheckbox}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:53.640" level="INFO">Current page contains checkbox 'xpath=//input[@name="company"]'.</msg>
-<status status="PASS" endtime="20180331 17:44:53.640" starttime="20180331 17:44:53.612"></status>
-</kw>
-<kw name="Select Checkbox" library="Selenium2Library">
-<doc>Selects checkbox identified by ``locator``.</doc>
-<arguments>
-<arg>${buyAsCompanyCheckbox}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:53.641" level="INFO">Selecting checkbox 'xpath=//input[@name="company"]'.</msg>
-<status status="PASS" endtime="20180331 17:44:53.738" starttime="20180331 17:44:53.641"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${billingCompanyInput}</arg>
-</arguments>
-<status status="PASS" endtime="20180331 17:44:53.762" starttime="20180331 17:44:53.739"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${submitNextButton}</arg>
-</arguments>
-<msg timestamp="20180331 17:44:53.763" level="INFO">Clicking element 'class=checkout-submit-next'.</msg>
-<status status="PASS" endtime="20180331 17:44:53.867" starttime="20180331 17:44:53.763"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Go To the Payment Options" library="BudikyKeywords">
+<kw name="Submit the Address" library="BudikyKeywords">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>${billingFirstNameInput}</arg>
+<arg>${customerName}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:53.911" level="INFO">Current page contains element 'xpath=//input[@name="billing_first_name"][@required]'.</msg>
-<status status="PASS" endtime="20180331 17:44:53.911" starttime="20180331 17:44:53.868"></status>
+<msg timestamp="20180415 18:20:01.012" level="INFO">Typing text 'František Dobrota' into text field 'xpath=//input[@name="billing_first_name"][@required]'.</msg>
+<status status="PASS" endtime="20180415 18:20:01.230" starttime="20180415 18:20:01.010"></status>
 </kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>${billingStreetInput}</arg>
+<arg>${customerStreet}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:53.935" level="INFO">Current page contains element 'xpath=//input[@name="billing_street"][@required]'.</msg>
-<status status="PASS" endtime="20180331 17:44:53.935" starttime="20180331 17:44:53.912"></status>
+<msg timestamp="20180415 18:20:01.231" level="INFO">Typing text 'Uličnická 123' into text field 'xpath=//input[@name="billing_street"][@required]'.</msg>
+<status status="PASS" endtime="20180415 18:20:01.450" starttime="20180415 18:20:01.231"></status>
 </kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>${billingCityInput}</arg>
+<arg>${customerCity}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:53.979" level="INFO">Current page contains element 'xpath=//input[@name="billing_city"][@required]'.</msg>
-<status status="PASS" endtime="20180331 17:44:53.980" starttime="20180331 17:44:53.936"></status>
+<msg timestamp="20180415 18:20:01.452" level="INFO">Typing text 'Praha' into text field 'xpath=//input[@name="billing_city"][@required]'.</msg>
+<status status="PASS" endtime="20180415 18:20:01.573" starttime="20180415 18:20:01.451"></status>
 </kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>${billingZipInput}</arg>
+<arg>${customerZipCode}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:54.014" level="INFO">Current page contains element 'xpath=//input[@name="billing_zip"][@required]'.</msg>
-<status status="PASS" endtime="20180331 17:44:54.014" starttime="20180331 17:44:53.980"></status>
+<msg timestamp="20180415 18:20:01.575" level="INFO">Typing text '18600' into text field 'xpath=//input[@name="billing_zip"][@required]'.</msg>
+<status status="PASS" endtime="20180415 18:20:01.689" starttime="20180415 18:20:01.574"></status>
 </kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${billingCountrySelect}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:54.048" level="INFO">Current page contains element 'xpath=//select[@name="billing_country"][@required]'.</msg>
-<status status="PASS" endtime="20180331 17:44:54.048" starttime="20180331 17:44:54.015"></status>
+<msg timestamp="20180415 18:20:01.690" level="INFO">Clicking element 'xpath=//select[@name="billing_country"][@required]'.</msg>
+<status status="PASS" endtime="20180415 18:20:01.820" starttime="20180415 18:20:01.690"></status>
 </kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Select From List By Label" library="Selenium2Library">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>${billingCountrySelect}</arg>
+<arg>${customerCountry}</arg>
+</arguments>
+<msg timestamp="20180415 18:20:01.821" level="INFO">Selecting options from selection list 'xpath=//select[@name="billing_country"][@required]' by label Česko.</msg>
+<status status="PASS" endtime="20180415 18:20:02.046" starttime="20180415 18:20:01.820"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>${emailInput}</arg>
+<arg>${customerEmail}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:54.078" level="INFO">Current page contains element 'xpath=//input[@name="email"][@required]'.</msg>
-<status status="PASS" endtime="20180331 17:44:54.078" starttime="20180331 17:44:54.049"></status>
+<msg timestamp="20180415 18:20:02.047" level="INFO">Typing text 'frantisek.dobrota1237894565@neexistujici.cz' into text field 'xpath=//input[@name="email"][@required]'.</msg>
+<status status="PASS" endtime="20180415 18:20:02.670" starttime="20180415 18:20:02.046"></status>
 </kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>${phoneInput}</arg>
+<arg>${customerPhone}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:54.102" level="INFO">Current page contains element 'xpath=//input[@name="phone"][@required]'.</msg>
-<status status="PASS" endtime="20180331 17:44:54.102" starttime="20180331 17:44:54.079"></status>
+<msg timestamp="20180415 18:20:02.671" level="INFO">Typing text '+420123456789' into text field 'xpath=//input[@name="phone"][@required]'.</msg>
+<status status="PASS" endtime="20180415 18:20:02.842" starttime="20180415 18:20:02.670"></status>
 </kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
 <arguments>
-<arg>${billingIcInput}</arg>
+<arg>${submitNextButton}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:54.117" level="INFO">Current page contains element 'xpath=//input[@name="billing_company"][@required]'.</msg>
-<status status="PASS" endtime="20180331 17:44:54.118" starttime="20180331 17:44:54.103"></status>
+<msg timestamp="20180415 18:20:02.843" level="INFO">Clicking button 'class=checkout-submit-next'.</msg>
+<status status="PASS" endtime="20180415 18:20:02.994" starttime="20180415 18:20:02.843"></status>
 </kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
-<arg>${billingDicInput}</arg>
+<arg>${checkoutShippingContainer}</arg>
 </arguments>
-<msg timestamp="20180331 17:44:54.144" level="INFO">Current page contains element 'xpath=//input[@name="billing_dic"]'.</msg>
-<status status="PASS" endtime="20180331 17:44:54.145" starttime="20180331 17:44:54.121"></status>
+<status status="PASS" endtime="20180415 18:20:03.011" starttime="20180415 18:20:02.994"></status>
+</kw>
+<status status="PASS" endtime="20180415 18:20:03.012" starttime="20180415 18:20:01.010"></status>
+</kw>
+<kw name="Select Radio Button" library="Selenium2Library">
+<doc>Sets radio button group ``group_name`` to ``value``.</doc>
+<arguments>
+<arg>${shippingMethodRadioGroup}</arg>
+<arg>${personalCollectionRadioValue}</arg>
+</arguments>
+<msg timestamp="20180415 18:20:03.013" level="INFO">Selecting '200000002' from radio button 'shipping_method'.</msg>
+<status status="PASS" endtime="20180415 18:20:03.092" starttime="20180415 18:20:03.013"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${shopAddressClassName}</arg>
+</arguments>
+<status status="PASS" endtime="20180415 18:20:03.112" starttime="20180415 18:20:03.093"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${submitShipping}</arg>
+</arguments>
+<status status="PASS" endtime="20180415 18:20:03.155" starttime="20180415 18:20:03.112"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${submitShipping}</arg>
+</arguments>
+<msg timestamp="20180415 18:20:03.156" level="INFO">Clicking element 'xpath=//div[@class="checkout-form checkout-shipping cf wnd-show"]/form/div[@class="checkout-submit cf"]/button[@class="checkout-submit-next wnd-button-submit"]'.</msg>
+<status status="PASS" endtime="20180415 18:20:03.249" starttime="20180415 18:20:03.155"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${checkoutPaymentContainer}</arg>
+</arguments>
+<status status="PASS" endtime="20180415 18:20:03.268" starttime="20180415 18:20:03.250"></status>
+</kw>
+<status status="PASS" endtime="20180415 18:20:03.268" starttime="20180415 18:20:01.009"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20180415 18:20:05.274" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180415 18:20:05.274" starttime="20180415 18:20:03.269"></status>
+</kw>
+<kw name="Select Radio Button" library="Selenium2Library">
+<doc>Sets radio button group ``group_name`` to ``value``.</doc>
+<arguments>
+<arg>${paymentMethodRadioGroup}</arg>
+<arg>${radioValue}</arg>
+</arguments>
+<msg timestamp="20180415 18:20:05.274" level="INFO">Selecting '200000000' from radio button 'payment_method'.</msg>
+<status status="PASS" endtime="20180415 18:20:05.289" starttime="20180415 18:20:05.274"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${submitPayment}</arg>
+</arguments>
+<status status="PASS" endtime="20180415 18:20:05.336" starttime="20180415 18:20:05.289"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${submitPayment}</arg>
+</arguments>
+<msg timestamp="20180415 18:20:05.336" level="INFO">Clicking element 'xpath=//div[@class="checkout-form checkout-payment cf wnd-show"]/form/div[@class="checkout-submit cf"]/button[@class="checkout-submit-next wnd-button-submit"]'.</msg>
+<status status="PASS" endtime="20180415 18:20:05.392" starttime="20180415 18:20:05.336"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${checkoutConfirmContainer}</arg>
+</arguments>
+<status status="PASS" endtime="20180415 18:20:05.410" starttime="20180415 18:20:05.393"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${textExpected}</arg>
+</arguments>
+<status status="PASS" endtime="20180415 18:20:05.435" starttime="20180415 18:20:05.412"></status>
+</kw>
+<status status="PASS" endtime="20180415 18:20:05.435" starttime="20180415 18:20:01.009"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${customerEmail}</arg>
+</arguments>
+<status status="PASS" endtime="20180415 18:20:05.466" starttime="20180415 18:20:05.436"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${personalCollectionLabel}</arg>
+</arguments>
+<msg timestamp="20180415 18:20:05.482" level="INFO">Current page contains text 'Osobní odběr'.</msg>
+<status status="PASS" endtime="20180415 18:20:05.482" starttime="20180415 18:20:05.466"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${bankTransferLabel}</arg>
+</arguments>
+<msg timestamp="20180415 18:20:05.513" level="INFO">Current page contains text 'Bankovní převod'.</msg>
+<status status="PASS" endtime="20180415 18:20:05.513" starttime="20180415 18:20:05.482"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20180415 18:20:07.520" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180415 18:20:07.520" starttime="20180415 18:20:05.513"></status>
+</kw>
+<kw name="Select Checkbox" library="Selenium2Library">
+<doc>Selects checkbox identified by ``locator``.</doc>
+<arguments>
+<arg>${termsCheckbox}</arg>
+</arguments>
+<msg timestamp="20180415 18:20:07.520" level="INFO">Selecting checkbox 'xpath=//input[@id="ch-agree"][@required="required"]'.</msg>
+<status status="PASS" endtime="20180415 18:20:07.598" starttime="20180415 18:20:07.520"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${submitConfirm}</arg>
+</arguments>
+<msg timestamp="20180415 18:20:07.598" level="INFO">Clicking element 'xpath=//div[@class="checkout-form checkout-confirm cf wnd-show"]/form/div[@class="checkout-submit cf"]/button[@class="checkout-submit-next wnd-button-submit"]'.</msg>
+<status status="PASS" endtime="20180415 18:20:07.693" starttime="20180415 18:20:07.598"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until ``text`` disappears from current page.</doc>
+<arguments>
+<arg>${customerEmail}</arg>
+</arguments>
+<status status="PASS" endtime="20180415 18:20:15.366" starttime="20180415 18:20:07.693"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${orderCompleteUrl}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180415 18:20:23.735" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+</msg>
+<status status="FAIL" endtime="20180415 18:20:23.735" starttime="20180415 18:20:19.453"></status>
+</kw>
+<msg timestamp="20180415 18:20:23.735" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+</msg>
+<msg timestamp="20180415 18:20:23.735" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+</msg>
+<status status="FAIL" endtime="20180415 18:20:23.735" starttime="20180415 18:20:15.366"></status>
 </kw>
 <kw type="teardown" name="Capture Screenshot And Close Browser" library="BrowserKeywords">
 <kw name="Capture Page Screenshot" library="Selenium2Library">
 <doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180331 17:44:54.552" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180331 17:44:54.553" starttime="20180331 17:44:54.146"></status>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180415 18:20:31.957" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+</msg>
+<status status="FAIL" endtime="20180415 18:20:31.957" starttime="20180415 18:20:27.879"></status>
+</kw>
+<msg timestamp="20180415 18:20:31.957" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+</msg>
+<msg timestamp="20180415 18:20:31.957" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+</msg>
+<status status="FAIL" endtime="20180415 18:20:31.957" starttime="20180415 18:20:23.735"></status>
 </kw>
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180331 17:44:57.731" starttime="20180331 17:44:54.553"></status>
+<status status="PASS" endtime="20180415 18:20:34.990" starttime="20180415 18:20:31.957"></status>
 </kw>
-<status status="PASS" endtime="20180331 17:44:57.732" starttime="20180331 17:44:54.145"></status>
+<status status="FAIL" endtime="20180415 18:20:34.990" starttime="20180415 18:20:23.735">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+</status>
 </kw>
-<status status="PASS" endtime="20180331 17:44:57.732" critical="yes" starttime="20180331 17:44:43.875"></status>
+<status status="FAIL" endtime="20180415 18:20:34.990" critical="yes" starttime="20180415 18:19:51.844">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+Also teardown failed:
+WebDriverException: Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+</status>
 </test>
-<status status="PASS" endtime="20180331 17:44:57.733" starttime="20180331 17:44:30.341"></status>
+<status status="FAIL" endtime="20180415 18:20:34.990" starttime="20180415 18:19:51.609"></status>
 </suite>
-<status status="PASS" endtime="20180331 17:44:57.737" starttime="20180331 17:44:30.338"></status>
+<status status="FAIL" endtime="20180415 18:20:34.990" starttime="20180415 18:19:51.609"></status>
 </suite>
-<status status="PASS" endtime="20180331 17:44:57.740" starttime="20180331 17:44:30.335"></status>
+<status status="FAIL" endtime="20180415 18:20:34.990" starttime="20180415 18:19:51.609"></status>
 </suite>
-<status status="PASS" endtime="20180331 17:44:57.744" starttime="20180331 17:44:30.308"></status>
+<status status="FAIL" endtime="20180415 18:20:34.990" starttime="20180415 18:19:51.578"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="2">Critical Tests</stat>
-<stat fail="0" pass="2">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Budiky" pass="2">Budiky</stat>
-<stat fail="0" id="s1-s1" name="Tests" pass="2">Budiky.Tests</stat>
-<stat fail="0" id="s1-s1-s1" name="Order" pass="2">Budiky.Tests.Order</stat>
-<stat fail="0" id="s1-s1-s1-s1" name="Order" pass="2">Budiky.Tests.Order.Order</stat>
+<stat fail="1" id="s1" name="Budiky" pass="0">Budiky</stat>
+<stat fail="1" id="s1-s1" name="Tests" pass="0">Budiky.Tests</stat>
+<stat fail="1" id="s1-s1-s1" name="Order" pass="0">Budiky.Tests.Order</stat>
+<stat fail="1" id="s1-s1-s1-s1" name="Order" pass="0">Budiky.Tests.Order.Order</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20180415 18:20:23.735" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+</msg>
+<msg timestamp="20180415 18:20:31.957" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+</msg>
 </errors>
 </robot>
