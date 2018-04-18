@@ -5,11 +5,9 @@ Resource    ../Settings/BudikySettings.txt
 
 *** Keywords ***
 Go To the Shopping Cart
-    Wait Until Page Contains Element    ${oneProductCartIcon} 
     Page Should Contain Element    ${cartIconClassName}    
-    Click Element    ${cartIconClassName}
+    Click Element    ${cartIconClassName} 
     Wait Until Page Contains Element    ${cartContainerClassName} 
-    Wait Until Page Contains Element    ${shoppingCartItemClassName}  
     
 Navigate Via Link
     [Arguments]    ${LinkElement}    ${expectedUrl}
@@ -31,7 +29,9 @@ Add the Product To the Shopping Cart
 
 Add Product And Go To Cart
     Add the Product To the Shopping Cart 
+    Wait Until Page Contains Element    ${oneProductCartIcon}
     Go To the Shopping Cart
+    Wait Until Page Contains Element    ${shoppingCartItemClassName} 
 
 Click On Change Quantity Icon
     [Arguments]    ${button}    ${input}    ${icon}
